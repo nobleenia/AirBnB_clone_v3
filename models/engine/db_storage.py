@@ -52,7 +52,13 @@ class DBStorage:
         return (new_dict)
 
     def get(self, cls, id):
-        """ retrieves """
+        """
+        returns object based on it's class and id
+        None if not found
+        Args:
+            id (int): id of the class instance
+            cls (obj): class object_
+        """
         if cls in classes.values() and id and type(id) is str:
             d_obj = self.all(cls)
             for key, value in d_obj.items():
