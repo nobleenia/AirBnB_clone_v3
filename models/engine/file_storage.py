@@ -45,10 +45,14 @@ class FileStorage:
 
     def count(self, cls=None):
         """ counts """
-        data = self.all(cls)
-        if cls in classes.values():
-            data = self.all(cls)
-        return len(data)
+        count = 0
+        for key in self.all().keys():
+            if cls is not None:
+                if cls().__class__.__name__ == key.split(".")[0]:
+                    count += 1
+            else:
+                count += 1
+        return (count)
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
