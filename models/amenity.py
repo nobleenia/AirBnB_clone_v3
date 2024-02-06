@@ -4,6 +4,7 @@ from sqlalchemy import Column, String
 from models.base_model import BaseModel, Base
 import models
 
+
 class Amenity(BaseModel, Base):
     """Representation of Amenity """
     if models.storage_t == 'db':
